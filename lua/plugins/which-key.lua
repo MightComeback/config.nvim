@@ -5,7 +5,7 @@ return {
 		require("which-key").setup()
 
 		-- Document existing key chains
-		require("which-key").register({
+		require("which-key").add({
 			{ "<leader>c", group = "[C]ode" },
 			{ "<leader>c_", hidden = true },
 			{ "<leader>d", group = "[D]ocument" },
@@ -22,8 +22,8 @@ return {
 			{ "<leader>w_", hidden = true },
 		})
 		-- visual mode
-		require("which-key").register({
-			["<leader>h"] = { "Git [H]unk" },
-		}, { mode = "v" })
+		require("which-key").add({
+			{ "<leader>h", desc = "Git [H]unk", mode = "v" },
+		})
 	end,
 }

@@ -77,6 +77,7 @@ return {
 				end
 
 				if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+					vim.lsp.inlay_hint.enable(true)
 					map("<leader>th", function()
 						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 					end, "[T]oggle Inlay [H]ints")
@@ -88,10 +89,33 @@ return {
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 		local servers = {
 			-- clangd = {},
-			-- gopls = {},
+			gopls = {
+				settings = {
+					gopls = {
+						["ui.inlayhint.hints"] = {
+							compositeLiteralFields = true,
+							constantValues = true,
+							parameterNames = true,
+						},
+					},
+				},
+			},
 			-- pyright = {},
 			-- rust_analyzer = {},
-			-- tsserver = {},
+			tsserver = {
+				init_options = {
+					preferences = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayEnumMemberValueHints = true,
+						importModuleSpecifierPreference = "non-relative",
+					},
+				},
+			},
 
 			lua_ls = {
 				-- cmd = {...},

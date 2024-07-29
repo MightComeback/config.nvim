@@ -16,6 +16,15 @@ return {
 	},
 	config = function()
 		require("telescope").setup({
+			shorten_path = true,
+			defaults = {
+				path_display = { "smart" },
+				layout_config = {
+					horizontal = {
+						preview_cutoff = 0,
+					},
+				},
+			},
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
