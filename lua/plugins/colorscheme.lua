@@ -1,15 +1,16 @@
 return {
 	{
-		"rebelot/kanagawa.nvim",
+		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("kanagawa-dragon")
+			vim.cmd.colorscheme("tokyonight")
 		end,
 	},
 	-- Other installed colorschemes
-	{ "vague2k/vague.nvim", name = "vague" },
+	{ "vague2k/vague.nvim", name = "vague" }, -- Primeagen
 	"rktjmp/lush.nvim",
+	"rebelot/kanagawa.nvim",
 	"tckmn/hotdog.vim",
 	"dundargoc/fakedonalds.nvim",
 	"craftzdog/solarized-osaka.nvim",

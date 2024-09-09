@@ -19,9 +19,14 @@ return {
 			shorten_path = true,
 			defaults = {
 				path_display = { "smart" },
+				layout_strategy = "vertical",
 				layout_config = {
-					horizontal = {
+					vertical = {
 						preview_cutoff = 0,
+					},
+					center = {
+						width = 0.9,
+						height = 0.9,
 					},
 				},
 			},
