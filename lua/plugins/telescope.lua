@@ -18,7 +18,6 @@ return {
 		require("telescope").setup({
 			shorten_path = true,
 			defaults = {
-				path_display = { "smart" },
 				layout_strategy = "vertical",
 				layout_config = {
 					vertical = {

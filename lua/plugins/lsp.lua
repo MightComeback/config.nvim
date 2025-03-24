@@ -105,6 +105,8 @@ return {
 						includeInlayFunctionLikeReturnTypeHints = true,
 						includeInlayEnumMemberValueHints = true,
 						importModuleSpecifierPreference = "non-relative",
+						maxPreload = 10000,
+						preloadFileSize = 1000,
 						codeAction = {},
 					},
 				},
