@@ -6,7 +6,6 @@ vim.g.maplocalleader = " "
 
 -- Use global clipboard
 vim.opt.clipboard = "unnamedplus"
-
 -- Set Tabs
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -19,6 +18,7 @@ vim.g.have_nerd_font = true
 vim.o.wrap = false
 
 -- Line numbers
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Mouse mode
@@ -79,5 +79,8 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+-- Disable lsp logging
+vim.lsp.set_log_level("OFF")
 
 require("config.lazy")
